@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "GitHub Last Commit",
+	"version": "1.0",
+	"description": "Displays the last commit of a GitHub project.",
+	"icons": {
+		"16": "icons/icon16.png",
+		"64": "icons/icon64.png",
+		"128": "icons/icon128.png"
+	},
+	"optional_permissions": ["activeTab"],
+	"optional_host_permissions": ["http://*/*", "https://*/*"],
+	"content_scripts": [
+		{
+			"matches": ["https://github.com/*/*"],
+			"js": ["content.js"]
+		}
+	],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {
+		"default_popup": "popup.html"
+	}
+}
